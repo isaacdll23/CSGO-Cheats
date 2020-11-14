@@ -1,0 +1,5 @@
+Memory class
+Check if process is running
+Get processid
+Get Handle to Processs csgo.exe
+Get Handle to Module client_panorama.dll
