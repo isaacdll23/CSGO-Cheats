@@ -14,4 +14,9 @@ extern DWORD m_iCrosshairId;
 extern DWORD dwEntityList;;
 extern DWORD m_iTeamNum;
 
+// WALLHACK
+extern DWORD m_iGlowIndex;
+extern DWORD dwGlowObjectManager;
+extern DWORD m_bIsDefusing;
+
 #endif // !OFFSETS_H

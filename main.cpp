@@ -45,15 +45,22 @@ int main() {
 			Sleep(300);
 		}
 
+		if (GetAsyncKeyState(VK_HOME)) {
+			wallhackStatus = !wallhackStatus;
+			ClearScreen();
+			PrintStatus();
+			Sleep(300);
+		}
+
 		// Key Actions
-		//BHOP
+		// BHOP
 		if (GetAsyncKeyState(VK_SPACE) && bhopStatus) {
 			if (isGrounded(mem) && isMoving(mem)) {
 				ForceJump(mem);
 			}
 		}
 
-		//TRIGGERBOT
+		// TRIGGERBOT
 		if (GetAsyncKeyState(VK_MENU) == KeyDown && triggerbotStatus) {
 			if (!keyHeld) {
 				keyHeld = true;
@@ -71,6 +78,11 @@ int main() {
 				keyHeld = false;
 			}
 
+		}
+
+		// WALLHACK
+		if (wallhackStatus) {
+			UpdateGlow(mem);
 		}
 	}
 }

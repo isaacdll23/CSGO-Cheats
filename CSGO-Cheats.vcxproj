@@ -146,6 +146,7 @@
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="offsets.cpp" />
     <ClCompile Include="triggerbot.cpp" />
+    <ClCompile Include="wallhack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cheats.h" />
