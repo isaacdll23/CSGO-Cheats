@@ -9,6 +9,7 @@ struct vector {
 
 extern bool bhopStatus;
 extern bool triggerbotStatus;
+extern bool keyHeld;
 
 // BHOPS
 void ForceJump(MemManager);

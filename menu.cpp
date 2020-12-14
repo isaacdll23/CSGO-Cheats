@@ -20,7 +20,7 @@ void ClearScreen() {
 }
 
 void PrintStatus() {
-	cout << "SUPER MENU V0.2\n";
+	cout << "SUPER MENU V0.2\nCreated by Isaac\n\n";
 	cout << "BHOP: " << (bhopStatus ? "ON\n" : "OFF\n");
-	cout << "TRIGGETBOT: " << (triggerbotStatus ? "ON\n" : "OFF\n");
+	cout << "TRIGGERBOT: " << (triggerbotStatus ? "ON\n" : "OFF\n");
 }

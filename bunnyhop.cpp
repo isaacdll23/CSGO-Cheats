@@ -20,4 +20,4 @@ bool isMoving(MemManager mem) {
 		return false;
 	else
 		return true;
-}
+} 

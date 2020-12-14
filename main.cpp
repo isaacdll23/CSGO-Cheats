@@ -4,8 +4,8 @@
 #include "offsets.h"
 #include "menu.h"
 
-#define KeyDown -32760;
-#define KeyUp 0;
+#define KeyDown -32768
+#define KeyUp 0
 
 int main() {
 	MemManager mem;
@@ -22,14 +22,14 @@ int main() {
 	mem.GetProcessID(targetProcess);
 	mem.GetProcessHandle();
 	mem.GetModuleBaseAddress(targetModule);
-
+	
 	mem.GetLocalPlayer();
 
 	ClearScreen();
 	PrintStatus();
 
 	while (true) {
-		
+
 		// Menu Actions
 		if (GetAsyncKeyState(VK_INSERT)) {
 			bhopStatus = !bhopStatus;
@@ -54,10 +54,21 @@ int main() {
 		}
 
 		//TRIGGERBOT
-		if (GetAsyncKeyState(VK_CAPITAL) && triggerbotStatus) {
-			if (isOnTarget(mem)) {
-				Sleep(5);
+		if (GetAsyncKeyState(VK_MENU) == KeyDown && triggerbotStatus) {
+			if (!keyHeld) {
+				keyHeld = true;
+			}
+
+			if (isOnTarget(mem) && keyHeld) {
+				Sleep(15);
 				Shoot(mem);
+			}
+			
+
+		}
+		if (GetAsyncKeyState(VK_MENU) == KeyUp && triggerbotStatus) {
+			if (keyHeld) {
+				keyHeld = false;
 			}
 
 		}

@@ -83,7 +83,7 @@ void MemManager::GetModuleBaseAddress(const std::string &moduleName) {
 
 
 void MemManager::GetLocalPlayer() {
-	const DWORD dwLocalPlayer = 0xD3DD14;
+	const DWORD dwLocalPlayer = 0xD8722C;
 	do {
 		MemManager::localPlayer = ReadBase<DWORD>(dwLocalPlayer);
 	} while (localPlayer == NULL);
