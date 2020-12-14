@@ -22,7 +22,6 @@ int main() {
 	mem.GetProcessID(targetProcess);
 	mem.GetProcessHandle();
 	mem.GetModuleBaseAddress(targetModule);
-	
 	mem.GetLocalPlayer();
 
 	ClearScreen();
@@ -30,14 +29,14 @@ int main() {
 
 	while (true) {
 
-		// Menu Actions
+		/* Menu Actions */
 		if (GetAsyncKeyState(VK_INSERT)) {
 			bhopStatus = !bhopStatus;
 			ClearScreen();
 			PrintStatus();
 			Sleep(300);
 		}
-		
+
 		if (GetAsyncKeyState(VK_DELETE)) {
 			triggerbotStatus = !triggerbotStatus;
 			ClearScreen();
@@ -52,7 +51,14 @@ int main() {
 			Sleep(300);
 		}
 
-		// Key Actions
+		if (GetAsyncKeyState(VK_END)) {
+			radarStatus = !radarStatus;
+			ClearScreen();
+			PrintStatus();
+			Sleep(300);
+		}
+
+		/* Key Actions */
 		// BHOP
 		if (GetAsyncKeyState(VK_SPACE) && bhopStatus) {
 			if (isGrounded(mem) && isMoving(mem)) {
@@ -70,19 +76,22 @@ int main() {
 				Sleep(15);
 				Shoot(mem);
 			}
-			
-
 		}
+
 		if (GetAsyncKeyState(VK_MENU) == KeyUp && triggerbotStatus) {
 			if (keyHeld) {
 				keyHeld = false;
 			}
-
 		}
 
 		// WALLHACK
 		if (wallhackStatus) {
 			UpdateGlow(mem);
+		}
+
+		// RADAR
+		if (radarStatus) {
+			ToggleRadar(mem);
 		}
 	}
 }

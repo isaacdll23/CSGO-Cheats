@@ -13,7 +13,6 @@ bool isOnTarget(MemManager mem) {
 	myTeam = mem.ReadPlayer<int>(m_iTeamNum);
 
 	if (crosshairId != 0 && crosshairId < 64) {
-
 		DWORD entity = mem.ReadBase<DWORD>(dwEntityList + ((crosshairId - 1) * 0x10));
 		int	entityTeam = mem.Read<int>(entity + m_iTeamNum);
 		int entityHealth = mem.Read<int>(entity + m_iHealth);
@@ -23,5 +22,6 @@ bool isOnTarget(MemManager mem) {
 		else
 			return false;
 	}
+	
 	return false;
 }

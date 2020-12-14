@@ -16,3 +16,6 @@ DWORD m_iTeamNum = 0xF4;
 DWORD m_iGlowIndex = 0xA438;
 DWORD dwGlowObjectManager = 0x52E70D0;
 DWORD m_bIsDefusing = 0x3930;
+
+// RADAR
+DWORD m_bSpotted = 0x93D;

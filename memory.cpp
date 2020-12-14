@@ -1,7 +1,6 @@
 #include "memory.h"
 
-
-bool MemManager::IsProcessRunning(const std::string &processName){
+bool MemManager::IsProcessRunning(const std::string &processName) {
 	bool isRunning = false;
 
 	PROCESSENTRY32 entry;
@@ -26,9 +25,8 @@ bool MemManager::IsProcessRunning(const std::string &processName){
 	return isRunning;
 }
 
-void MemManager::GetProcessID(const std::string &processName){
+void MemManager::GetProcessID(const std::string &processName) {
 	
-
 	PROCESSENTRY32 entry;
 	entry.dwSize = sizeof(PROCESSENTRY32);
 	HANDLE snap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, NULL);

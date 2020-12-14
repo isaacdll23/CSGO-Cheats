@@ -24,4 +24,5 @@ void PrintStatus() {
 	cout << "BHOP: " << (bhopStatus ? "ON\n" : "OFF\n");
 	cout << "TRIGGERBOT: " << (triggerbotStatus ? "ON\n" : "OFF\n");
 	cout << "WALLHACK: " << (wallhackStatus ? "ON\n" : "OFF\n");
+	cout << "RADAR: " << (radarStatus ? "ON\n" : "OFF\n");
 }

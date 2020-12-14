@@ -5,7 +5,6 @@
 #include <Windows.h>
 #include <string>
 
-
 void PrintGameFound(std::string);
 void PrintWaiting(std::string);
 void TerminateCheat();
