@@ -61,6 +61,11 @@ class MemManager {
 		void WritePlayer(DWORD address, cData value) {
 			WriteProcessMemory(MemManager::processHandle, LPVOID(MemManager::localPlayer + address), &value, sizeof(cData), NULL);
 		}
+
+		template<class cData>
+		void Write(DWORD address, cData value) {
+			WriteProcessMemory(MemManager::processHandle, LPVOID(address), &value, sizeof(cData), NULL);
+		}
 };
 
 #endif // !MEMORY_H

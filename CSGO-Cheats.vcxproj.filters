@@ -36,6 +36,9 @@
     <ClCompile Include="triggerbot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="wallhack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="memory.h">
