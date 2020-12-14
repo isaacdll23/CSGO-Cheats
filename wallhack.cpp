@@ -1,6 +1,6 @@
 #include "cheats.h"
 
-GlowStruct SetEnemyColor(MemManager mem, GlowStruct glow, DWORD entity){
+GlowStruct SetEnemyColor(MemManager mem, GlowStruct glow, DWORD entity) {
 	bool isDefusing = mem.Read<bool>(entity + m_bIsDefusing);
 
 	if (isDefusing) {
@@ -30,7 +30,7 @@ GlowStruct SetTeamColor(MemManager mem, GlowStruct glow) {
 }
 
 
-void UpdateGlow(MemManager mem){
+void UpdateGlow(MemManager mem) {
 
 	DWORD glowObject = mem.ReadBase<DWORD>(dwGlowObjectManager);
 	myTeam = mem.ReadPlayer<int>(m_iTeamNum);

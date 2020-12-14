@@ -25,12 +25,12 @@ extern bool bhopStatus;
 extern bool triggerbotStatus;
 extern bool keyHeld;
 extern bool wallhackStatus;
+extern bool radarStatus;
 
 // BHOPS
 void ForceJump(MemManager);
 bool isGrounded(MemManager);
 bool isMoving(MemManager);
-
 
 // TRIGGERBOT
 extern int myTeam;
@@ -41,5 +41,8 @@ bool isOnTarget(MemManager);
 GlowStruct SetEnemyColor(MemManager, GlowStruct, DWORD);
 GlowStruct SetTeamColor(MemManager, GlowStruct);
 void UpdateGlow(MemManager);
+
+// RADAR
+void ToggleRadar(MemManager);
 
 #endif // !CHEATS_H

@@ -19,4 +19,7 @@ extern DWORD m_iGlowIndex;
 extern DWORD dwGlowObjectManager;
 extern DWORD m_bIsDefusing;
 
+// RADAR
+extern DWORD m_bSpotted;
+
 #endif // !OFFSETS_H

@@ -16,7 +16,6 @@ enum ProcessAccess : DWORD{
 	ReadWrite = ReadOnly | WriteOnly
 };
 
-
 class MemManager {
 	private:
 		DWORD dw_pid;
