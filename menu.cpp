@@ -20,9 +20,10 @@ void ClearScreen() {
 }
 
 void PrintStatus() {
-	cout << "SUPER MENU V0.3\nCreated by Isaac\n\n";
+	cout << "SUPER MENU V0.4\nCreated by Isaac\n\n";
 	cout << "BHOP: " << (bhopStatus ? "ON\n" : "OFF\n");
 	cout << "TRIGGERBOT: " << (triggerbotStatus ? "ON\n" : "OFF\n");
 	cout << "WALLHACK: " << (wallhackStatus ? "ON\n" : "OFF\n");
 	cout << "RADAR: " << (radarStatus ? "ON\n" : "OFF\n");
+	cout << "RCS: " << (rcsStatus ? "ON\n" : "OFF\n");
 }

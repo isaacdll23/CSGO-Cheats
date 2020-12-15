@@ -54,7 +54,7 @@ void MemManager::GetProcessHandle() {
 	MemManager::processHandle = OpenProcess(ProcessAccess::ReadWrite, FALSE, dw_pid);
 }
 
-void MemManager::GetModuleBaseAddress(const std::string &moduleName) {
+void MemManager::GetModuleBaseAddress(const std::string &moduleName, DWORD &destinationAddress) {
 	MODULEENTRY32 entry;
 	entry.dwSize = sizeof(MODULEENTRY32);
 	HANDLE snap = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE32 | TH32CS_SNAPMODULE, dw_pid);
@@ -69,7 +69,7 @@ void MemManager::GetModuleBaseAddress(const std::string &moduleName) {
 	// If loading was succesful, find module with target module name and store base address
 	do {
 		if (!strcmp(entry.szModule, moduleName.c_str())) {
-			MemManager::baseAddress = (DWORD)entry.modBaseAddr;
+			destinationAddress = (DWORD)entry.modBaseAddr;
 			std::cout << "Module base address found\n";
 			CloseHandle(snap);
 			return;

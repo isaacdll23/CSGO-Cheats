@@ -5,6 +5,30 @@
 
 struct vector {
 	float x, y, z;
+
+	vector operator+(vector v) {
+		return { x + v.x, y + v.y, z + v.z };
+	}
+	vector operator-(vector v) {
+		return { x - v.x, y - v.y, z - v.z };
+	}
+	vector operator*(float d) {
+		return { x * d, y * d, z * d };
+	}
+
+	void Normalize() {
+		while(y < -180.0f)
+			y += 360.0f;
+
+		while (y > 180.0f)
+			y -= 360.0f;
+
+		if (x > 89.0f)
+			x = 89.0f;
+		
+		if (x < -89.0f)
+			x = -89.0f;
+	}
 };
 
 struct GlowStruct {
@@ -26,6 +50,7 @@ extern bool triggerbotStatus;
 extern bool keyHeld;
 extern bool wallhackStatus;
 extern bool radarStatus;
+extern bool rcsStatus;
 
 // BHOPS
 void ForceJump(MemManager);
@@ -44,5 +69,9 @@ void UpdateGlow(MemManager);
 
 // RADAR
 void ToggleRadar(MemManager);
+
+// RCS
+void HandleRCS(MemManager);
+void GetClientState(MemManager);
 
 #endif // !CHEATS_H

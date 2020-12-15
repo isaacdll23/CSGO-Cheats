@@ -5,3 +5,4 @@ bool triggerbotStatus = false;
 bool keyHeld = false;
 bool wallhackStatus = false;
 bool radarStatus = false;
+bool rcsStatus = false;

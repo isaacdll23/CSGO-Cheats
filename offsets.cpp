@@ -19,3 +19,9 @@ DWORD m_bIsDefusing = 0x3930;
 
 // RADAR
 DWORD m_bSpotted = 0x93D;
+
+// RCS
+DWORD m_aimPunchAngle = 0x302C;
+DWORD dwClientState = 0x58DFE4;
+DWORD dwClientState_ViewAngles = 0x4D90;
+DWORD m_iShotsFired = 0xA390;

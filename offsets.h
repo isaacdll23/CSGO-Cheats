@@ -22,4 +22,10 @@ extern DWORD m_bIsDefusing;
 // RADAR
 extern DWORD m_bSpotted;
 
+// RCS
+extern DWORD m_aimPunchAngle;
+extern DWORD dwClientState;
+extern DWORD dwClientState_ViewAngles;
+extern DWORD m_iShotsFired;
+
 #endif // !OFFSETS_H

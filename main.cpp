@@ -11,6 +11,7 @@ int main() {
 	MemManager mem;
 	const std::string targetProcess = "csgo.exe";
 	const std::string targetModule = "client.dll";
+	const std::string targetModule2 = "engine.dll";
 
 	while (!mem.IsProcessRunning(targetProcess)) {
 		PrintWaiting(targetProcess);
@@ -21,7 +22,8 @@ int main() {
 
 	mem.GetProcessID(targetProcess);
 	mem.GetProcessHandle();
-	mem.GetModuleBaseAddress(targetModule);
+	mem.GetModuleBaseAddress(targetModule, mem.clientBaseAddress);
+	mem.GetModuleBaseAddress(targetModule2, mem.engineBaseAddress);
 	mem.GetLocalPlayer();
 
 	ClearScreen();
@@ -53,6 +55,14 @@ int main() {
 
 		if (GetAsyncKeyState(VK_END)) {
 			radarStatus = !radarStatus;
+			ClearScreen();
+			PrintStatus();
+			Sleep(300);
+		}
+
+		if (GetAsyncKeyState(VK_PRIOR)) {
+			rcsStatus = !rcsStatus;
+			GetClientState(mem);
 			ClearScreen();
 			PrintStatus();
 			Sleep(300);
@@ -92,6 +102,10 @@ int main() {
 		// RADAR
 		if (radarStatus) {
 			ToggleRadar(mem);
+		}
+		// RCS
+		if (rcsStatus) {
+			HandleRCS(mem);
 		}
 	}
 }
