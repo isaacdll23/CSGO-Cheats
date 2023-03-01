@@ -1,4 +1,5 @@
 #include "memory.h"
+#include "offsets.h"
 
 bool MemManager::IsProcessRunning(const std::string &processName) {
 	bool isRunning = false;
@@ -81,7 +82,6 @@ void MemManager::GetModuleBaseAddress(const std::string &moduleName) {
 
 
 void MemManager::GetLocalPlayer() {
-	const DWORD dwLocalPlayer = 0xD8722C;
 	do {
 		MemManager::localPlayer = ReadBase<DWORD>(dwLocalPlayer);
 	} while (localPlayer == NULL);

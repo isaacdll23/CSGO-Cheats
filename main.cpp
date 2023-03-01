@@ -67,7 +67,7 @@ int main() {
 		}
 
 		// TRIGGERBOT
-		if (GetAsyncKeyState(VK_MENU) == KeyDown && triggerbotStatus) {
+		if (GetAsyncKeyState(VK_XBUTTON1) == KeyDown && triggerbotStatus) {
 			if (!keyHeld) {
 				keyHeld = true;
 			}
@@ -78,7 +78,7 @@ int main() {
 			}
 		}
 
-		if (GetAsyncKeyState(VK_MENU) == KeyUp && triggerbotStatus) {
+		if (GetAsyncKeyState(VK_XBUTTON1) == KeyUp && triggerbotStatus) {
 			if (keyHeld) {
 				keyHeld = false;
 			}

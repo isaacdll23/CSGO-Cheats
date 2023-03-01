@@ -4,7 +4,8 @@ int myTeam = 0;
 
 void Shoot(MemManager mem) {
 	mem.WriteBase<int>(dwForceAttack, 5);
-	Sleep(20);
+	int delay = rand() % 25 + 10;
+	Sleep(delay);
 	mem.WriteBase<int>(dwForceAttack, 4);
 }
 

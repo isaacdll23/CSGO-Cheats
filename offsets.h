@@ -2,6 +2,9 @@
 #define OFFSETS_H
 #include <Windows.h>
 
+// ALL
+extern DWORD dwLocalPlayer;
+
 // BHOPS
 extern DWORD m_fFlags;
 extern DWORD dwForceJump;
